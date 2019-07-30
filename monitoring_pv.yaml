@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-server
+  labels:
+    type: local
+    app: prometheus
+    component: server
+spec:
+  storageClassName: manual1
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  hostPath:
+    path: "/mnt/data"
