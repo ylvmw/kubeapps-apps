@@ -1,3 +1,11 @@
+persistence:
+  enabled: false
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  size: 1Gi
+  finalizers:
+    - kubernetes.io/pvc-protection
 datasources:
   datasources.yaml:
     apiVersion: 1

@@ -6,6 +6,12 @@ alertmanager:
 
 server:
   persistentVolume:
-    enabled: true
+    enabled: false
+    accessModes:
+      - ReadWriteOnce
+    annotations: {}
+    existingClaim: ""
+    mountPath: /data
     size: 1Gi
-    storageClass: "manual1"
+    storageClass: "manual"
+    subPath: ""
