@@ -14,7 +14,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/pv/alertmanager"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -32,7 +32,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/pv/prometheus-server"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -49,4 +49,4 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/pv/grafana"

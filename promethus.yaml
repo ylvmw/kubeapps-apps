@@ -1,6 +1,6 @@
 alertmanager:
   persistentVolume:
-    enabled: false
+    enabled: true
     size: 1Gi
     storageClass: "manual"
 
