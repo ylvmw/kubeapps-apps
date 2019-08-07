@@ -1,0 +1,81 @@
+authProxyEnabled: false
+commandline:
+  args: []
+dashboardImport:
+  dashboards: {}
+  enabled: false
+  timeout: 60
+  xpackauth:
+    enabled: false
+    password: mypass
+    username: myuser
+deployment:
+  annotations: {}
+env: {}
+envFromSecrets: {}
+extraConfigMapMounts: []
+extraContainers: ""
+extraVolumeMounts: []
+extraVolumes: []
+files:
+  kibana.yml:
+    elasticsearch.hosts: http://elasticsearch-elasticsearch-coordinating-only:9200
+    server.host: "0"
+    server.name: kibana
+image:
+  pullPolicy: IfNotPresent
+  repository: docker.elastic.co/kibana/kibana-oss
+  tag: 7.3.0
+ingress:
+  enabled: false
+initContainers: {}
+livenessProbe:
+  enabled: false
+  initialDelaySeconds: 30
+  path: /status
+  timeoutSeconds: 10
+nodeSelector: {}
+persistentVolumeClaim:
+  accessModes:
+  - ReadWriteOnce
+  annotations: {}
+  enabled: false
+  existingClaim: false
+  size: 5Gi
+plugins:
+  enabled: false
+  reset: false
+  values: null
+podAnnotations: {}
+podLabels: {}
+priorityClassName: ""
+readinessProbe:
+  enabled: false
+  initialDelaySeconds: 30
+  path: /status
+  periodSeconds: 10
+  successThreshold: 5
+  timeoutSeconds: 10
+replicaCount: 1
+resources: {}
+revisionHistoryLimit: 3
+securityContext:
+  allowPrivilegeEscalation: false
+  enabled: false
+  fsGroup: 2000
+  runAsUser: 1000
+service:
+  annotations: {}
+  externalPort: 443
+  internalPort: 5601
+  labels: {}
+  selector: {}
+  type: ClusterIP
+serviceAccount:
+  create: false
+  name: null
+testFramework:
+  enabled: "true"
+  image: dduportal/bats
+  tag: 0.4.0
+tolerations: []
